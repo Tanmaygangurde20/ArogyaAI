@@ -7,7 +7,7 @@ const Home = () => {
       <section className="relative pt-16 min-h-[70vh] flex items-center justify-center">
         {/* Background image */}
         <img
-          src="https://images.unsplash.com/photo-1622227922682-56c92e523e58?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://plus.unsplash.com/premium_photo-1661587563258-73e2604e523f?q=80&w=1460&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Healthcare background"
           className="absolute inset-0 w-full h-full object-cover object-center z-0"
           style={{ filter: 'brightness(0.7)' }}
@@ -32,12 +32,12 @@ const Home = () => {
         <div className="relative z-20 max-w-3xl mx-auto text-center text-white px-4 py-20">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 drop-shadow-lg">
             Welcome to{' '}
-            <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
+            <span className="text-white drop-shadow-lg">
               ArogyaAI
             </span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow">
-            Revolutionizing healthcare through intelligent vaccine management and predictive analytics
+            ArogyaAI is an AI-powered platform that helps healthcare providers manage vaccine distribution effectively. Featuring demand forecasting, dropout prediction, and zero-dose cluster detection, it ensures vaccines reach those who need them most.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -64,7 +64,7 @@ const Home = () => {
               Our Core Features
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover how ArogyaAI is transforming vaccine management with cutting-edge AI technology
+              Discover how ArogyaAI leverages AI technology to transform vaccine management
             </p>
           </div>
 
@@ -78,7 +78,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Demand Forecasting</h3>
               <p className="text-gray-600 mb-4">
-                Predict vaccine demand with advanced AI models for optimal inventory management
+                Using LSTM models, ArogyaAI predicts vaccine demand with historical and real-time data, optimizing inventory and reducing waste.
               </p>
               <Link to="/features" className="text-blue-600 font-semibold hover:text-blue-700">
                 Learn More →
@@ -94,7 +94,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Dropout Prediction</h3>
               <p className="text-gray-600 mb-4">
-                Identify children at risk of missing vaccinations with intelligent prediction models
+                Powered by Random Forest, XGBoost, and Logistic Regression, it identifies at-risk children, ensuring timely interventions.
               </p>
               <Link to="/features" className="text-purple-600 font-semibold hover:text-purple-700">
                 Learn More →
@@ -111,7 +111,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Cluster Detection</h3>
               <p className="text-gray-600 mb-4">
-                Detect zero-dose clusters and prioritize intervention areas for maximum impact
+                KMeans clustering detects zero-dose areas, enabling targeted efforts to boost vaccination coverage.
               </p>
               <Link to="/features" className="text-green-600 font-semibold hover:text-green-700">
                 Learn More →
@@ -128,18 +128,22 @@ const Home = () => {
             <div>
               <div className="text-4xl font-bold text-white mb-2">95%</div>
               <div className="text-blue-100">Accuracy Rate</div>
+              <p className="text-sm text-blue-200 mt-2">in demand predictions</p>
             </div>
             <div>
               <div className="text-4xl font-bold text-white mb-2">10K+</div>
               <div className="text-blue-100">Predictions Made</div>
+              <p className="text-sm text-blue-200 mt-2">delivering insights</p>
             </div>
             <div>
               <div className="text-4xl font-bold text-white mb-2">500+</div>
               <div className="text-blue-100">Areas Covered</div>
+              <p className="text-sm text-blue-200 mt-2">enhancing reach</p>
             </div>
             <div>
               <div className="text-4xl font-bold text-white mb-2">24/7</div>
               <div className="text-blue-100">AI Monitoring</div>
+              <p className="text-sm text-blue-200 mt-2">for real-time analytics</p>
             </div>
           </div>
         </div>
@@ -149,10 +153,10 @@ const Home = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Ready to Transform Your Vaccine Management?
+            Ready to Revolutionize Vaccine Management?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Join healthcare providers worldwide who are already using ArogyaAI to improve vaccination coverage
+            Join healthcare providers using ArogyaAI's real-time analytics, built with FastAPI and React, to improve vaccination outcomes.
           </p>
           <Link
             to="/contact"
@@ -166,4 +170,4 @@ const Home = () => {
   )
 }
 
-export default Home 
+export default Home
