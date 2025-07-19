@@ -66,7 +66,7 @@ const Clustering = () => {
     setError('')
     setResult(null)
     try {
-      const res = await fetch('http://localhost:8000/api/cluster/predict', {
+      const res = await fetch('https://tanmay0483-arogyaai.hf.space/api/cluster/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
