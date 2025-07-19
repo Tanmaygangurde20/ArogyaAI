@@ -62,7 +62,7 @@ const Forecasting = () => {
     setError('')
     setResult(null)
     try {
-      const res = await fetch('http://localhost:8000/api/forecast/predict', {
+      const res = await fetch('https://tanmay0483-arogyaai.hf.space/api/forecast/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
