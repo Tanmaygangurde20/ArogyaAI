@@ -80,7 +80,7 @@ const Dropout = () => {
     setError('')
     setResult(null)
     try {
-      const res = await fetch('http://localhost:8000/api/dropout/predict', {
+      const res = await fetch('https://Tanmay0483-ArogyaAI.hf.space/api/dropout/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
