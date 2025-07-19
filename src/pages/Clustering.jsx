@@ -89,68 +89,80 @@ const Clustering = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20 px-4 max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6 text-center">Zero-Dose Cluster Detection</h1>
+    <div className="min-h-screen pt-20 px-2 sm:px-4 max-w-2xl mx-auto flex flex-col items-center justify-center bg-gradient-to-br from-green-50 to-blue-50">
+      <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-center text-green-800 drop-shadow-lg tracking-tight">Zero-Dose Cluster Detection</h1>
 
-      <div className="flex justify-center gap-4 mb-6">
-        <button type="button" onClick={() => autofill('Mumbai')} className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300">
+      {/* Info Section: What does this model do? */}
+      <div className="mb-8 bg-green-100/80 border-l-4 border-green-400 p-4 rounded-xl shadow max-w-2xl mx-auto text-center">
+        <p className="text-green-900 text-lg">
+          <strong>What does this model do?</strong><br/>
+          This tool uses AI to analyze area-specific data (like zero-dose count, income, travel time, and literacy rate) and predicts whether a location is a high-risk zero-dose cluster. It classifies the area, estimates risk level, and provides actionable recommendations to help healthcare providers prioritize interventions and improve vaccination coverage.
+        </p>
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-4 mb-8">
+        <button type="button" onClick={() => autofill('Mumbai')} className="bg-gradient-to-r from-green-200 to-blue-200 hover:from-green-300 hover:to-blue-300 text-green-900 font-semibold px-4 py-2 rounded-lg shadow border border-green-300 hover:scale-105 transition-all duration-200">
           Autofill Mumbai
         </button>
-        <button type="button" onClick={() => autofill('Pune')} className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300">
+        <button type="button" onClick={() => autofill('Pune')} className="bg-gradient-to-r from-green-200 to-blue-200 hover:from-green-300 hover:to-blue-300 text-green-900 font-semibold px-4 py-2 rounded-lg shadow border border-green-300 hover:scale-105 transition-all duration-200">
           Autofill Pune
         </button>
-        <button type="button" onClick={() => autofill('Nashik')} className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300">
+        <button type="button" onClick={() => autofill('Nashik')} className="bg-gradient-to-r from-green-200 to-blue-200 hover:from-green-300 hover:to-blue-300 text-green-900 font-semibold px-4 py-2 rounded-lg shadow border border-green-300 hover:scale-105 transition-all duration-200">
           Autofill Nashik
         </button>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 rounded-xl shadow">
-        {/* ... keep all form fields same as before ... */}
-        <div>
-          <label className="block font-semibold mb-1">Area ID</label>
-          <input type="text" name="area_id" value={form.area_id} onChange={handleChange} className="w-full border rounded px-3 py-2" required />
+      <form onSubmit={handleSubmit} className="space-y-4 bg-white/90 p-8 rounded-2xl shadow-2xl w-full border border-green-100 backdrop-blur">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label className="block font-semibold mb-1 text-green-800">Area ID</label>
+            <input type="text" name="area_id" value={form.area_id} onChange={handleChange} className="w-full border border-green-200 rounded px-3 py-2 focus:ring-2 focus:ring-green-400" required />
+          </div>
+          <div>
+            <label className="block font-semibold mb-1 text-green-800">City Name</label>
+            <input type="text" name="city_name" value={form.city_name} onChange={handleChange} className="w-full border border-green-200 rounded px-3 py-2 focus:ring-2 focus:ring-green-400" required />
+          </div>
+          <div>
+            <label className="block font-semibold mb-1 text-green-800">District Name</label>
+            <input type="text" name="district_name" value={form.district_name} onChange={handleChange} className="w-full border border-green-200 rounded px-3 py-2 focus:ring-2 focus:ring-green-400" required />
+          </div>
+          <div>
+            <label className="block font-semibold mb-1 text-green-800">Latitude</label>
+            <input type="number" step="0.0001" name="latitude" value={form.latitude} onChange={handleChange} className="w-full border border-green-200 rounded px-3 py-2 focus:ring-2 focus:ring-green-400" required />
+          </div>
+          <div>
+            <label className="block font-semibold mb-1 text-green-800">Longitude</label>
+            <input type="number" step="0.0001" name="longitude" value={form.longitude} onChange={handleChange} className="w-full border border-green-200 rounded px-3 py-2 focus:ring-2 focus:ring-green-400" required />
+          </div>
+          <div>
+            <label className="block font-semibold mb-1 text-green-800">Zero-dose Count</label>
+            <input type="number" name="zero_dose_count" value={form.zero_dose_count} onChange={handleChange} className="w-full border border-green-200 rounded px-3 py-2 focus:ring-2 focus:ring-green-400" required />
+          </div>
+          <div>
+            <label className="block font-semibold mb-1 text-green-800">Income</label>
+            <input type="number" name="income" value={form.income} onChange={handleChange} className="w-full border border-green-200 rounded px-3 py-2 focus:ring-2 focus:ring-green-400" required />
+          </div>
+          <div>
+            <label className="block font-semibold mb-1 text-green-800">Travel Time (min)</label>
+            <input type="number" name="travel_time" value={form.travel_time} onChange={handleChange} className="w-full border border-green-200 rounded px-3 py-2 focus:ring-2 focus:ring-green-400" required />
+          </div>
+          <div>
+            <label className="block font-semibold mb-1 text-green-800">Literacy Rate (%)</label>
+            <input type="number" step="0.1" name="literacy_rate" value={form.literacy_rate} onChange={handleChange} className="w-full border border-green-200 rounded px-3 py-2 focus:ring-2 focus:ring-green-400" required />
+          </div>
         </div>
-        <div>
-          <label className="block font-semibold mb-1">City Name</label>
-          <input type="text" name="city_name" value={form.city_name} onChange={handleChange} className="w-full border rounded px-3 py-2" required />
-        </div>
-        <div>
-          <label className="block font-semibold mb-1">District Name</label>
-          <input type="text" name="district_name" value={form.district_name} onChange={handleChange} className="w-full border rounded px-3 py-2" required />
-        </div>
-        <div>
-          <label className="block font-semibold mb-1">Latitude</label>
-          <input type="number" step="0.0001" name="latitude" value={form.latitude} onChange={handleChange} className="w-full border rounded px-3 py-2" required />
-        </div>
-        <div>
-          <label className="block font-semibold mb-1">Longitude</label>
-          <input type="number" step="0.0001" name="longitude" value={form.longitude} onChange={handleChange} className="w-full border rounded px-3 py-2" required />
-        </div>
-        <div>
-          <label className="block font-semibold mb-1">Zero-dose Count</label>
-          <input type="number" name="zero_dose_count" value={form.zero_dose_count} onChange={handleChange} className="w-full border rounded px-3 py-2" required />
-        </div>
-        <div>
-          <label className="block font-semibold mb-1">Income</label>
-          <input type="number" name="income" value={form.income} onChange={handleChange} className="w-full border rounded px-3 py-2" required />
-        </div>
-        <div>
-          <label className="block font-semibold mb-1">Travel Time (min)</label>
-          <input type="number" name="travel_time" value={form.travel_time} onChange={handleChange} className="w-full border rounded px-3 py-2" required />
-        </div>
-        <div>
-          <label className="block font-semibold mb-1">Literacy Rate (%)</label>
-          <input type="number" step="0.1" name="literacy_rate" value={form.literacy_rate} onChange={handleChange} className="w-full border rounded px-3 py-2" required />
-        </div>
-        <button type="submit" className="w-full bg-green-600 text-white py-2 rounded font-bold hover:bg-green-700 transition">
+        <button type="submit" className="w-full bg-gradient-to-r from-green-600 to-blue-600 text-white py-3 rounded-xl font-bold hover:from-green-700 hover:to-blue-700 transition-all duration-200 shadow-lg mt-4 text-lg tracking-wide">
           {loading ? 'Detecting...' : 'Detect Cluster'}
         </button>
       </form>
 
-      {error && <div className="mt-6 text-red-600 text-center">{error}</div>}
+      {error && <div className="mt-6 text-red-600 text-center font-semibold">{error}</div>}
       {result && (
-        <div className="mt-8 bg-green-50 p-6 rounded-xl shadow text-center">
-          <h2 className="text-xl font-bold mb-2">Cluster Analysis Result</h2>
+        <div className="mt-10 bg-gradient-to-br from-green-50 to-blue-50 border border-green-200 p-8 rounded-2xl shadow-2xl text-center w-full">
+          <h2 className="text-2xl md:text-3xl font-bold text-green-800 mb-3 flex items-center justify-center gap-2">
+            <svg className="w-7 h-7 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+            Cluster Analysis Result
+          </h2>
           <div className="mb-2">Cluster Type: <span className="font-semibold">{result.cluster_type}</span></div>
           <div className="mb-2">Risk Level: <span className="font-semibold">{result.risk_level}</span></div>
           <div className="mb-2">Intervention Priority: <span className="font-semibold">{result.intervention_priority}</span></div>
