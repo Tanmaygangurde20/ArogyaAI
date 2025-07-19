@@ -2,8 +2,14 @@ const Mission = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-50 to-blue-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-green-50 to-blue-50 py-20">
+        {/* Background image */}
+        <img
+          src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3"
+          alt="Healthcare mission background"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-20 z-0"
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Our <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Mission</span>
